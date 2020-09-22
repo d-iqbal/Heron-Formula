@@ -1,39 +1,21 @@
 // Event Lisener
-document.getElementById('convert').addEventListener('click', area);
+document.getElementById('convert').addEventListener('click', CalcArea);
 
 // Event Function
-function Calculator() {
+function CalcArea() {
     // Input
-    let a = Number(document.getElementById('a').value);
-    let b = Number(document.getElementById('b').value);
-    let c =  Number(document.getElementById('c').value);
+    let sideA = Number(document.getElementById('a').value);
+    let sideB = Number(document.getElementById('b').value);
+    let sideC =  Number(document.getElementById('c').value);
 
-    // Process
-    ///// let s = (a + b + c) / 2;
-    ///// let area = Math.sqrt(s * (s - a) * (s - b) * (s - c));
+    
+    let area = HeronFormula(sideA, sideB, sideC);
 
     // Output
     document.getElementById('area').innerHTML = area;
 }
    
-
-
-//////////////////////////////////////////////////////////////////////
-
-
-function s(a, b, c) {
-    let s = ((a + b + c) / 2) {
-        
-    }
-    
-}
-
-
-//////////////////////////
-
-
-let s = (a + b + c) / 2;
-
-function area (a, b, c) {
-    return Math.sqrt((s - a) * (s - b) * (s - c));
+function HeronFormula(a, b, c) {
+    let s = (a + b + c) / 2;
+    return Math.sqrt(s * (s - a) * (s - b) * (s - c));
 }
